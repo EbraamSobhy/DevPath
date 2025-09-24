@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, BookOpen, Map, Sparkles, Star } from 'lucide-react';
+import { ArrowRight, Map, Sparkles, Star } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -45,12 +45,12 @@ export default function Home() {
         {/* Enhanced tagline */}
         <div className="text-center mb-12 max-w-4xl">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent leading-tight">
-            Documentation
+            <span className="text-[#26a269]">Dev</span>Path
             <br />
-            <span className="text-[#26a269]">Made Beautiful</span>
+            <span className="text-white">Explore Tech Roadmaps</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Transform your software projects with an intelligent documentation hub and visual roadmaps that evolve with your codebase.
+            Start your journey in Computer Science and Software Development with interactive roadmaps, clear milestones, and guided paths designed for beginners and students.
           </p>
         </div>
 
