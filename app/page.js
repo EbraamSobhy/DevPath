@@ -57,24 +57,6 @@ export default function Home() {
           </Link>
         </div>        
       </div>
-
-      {/* Enhanced footer */}
-      <footer className="relative z-10 border-t border-white bg-black/20 backdrop-blur-sm ">
-        <div className="max-w-6xl mx-auto px-8 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0 justify-center text-center flex-1 text-xl">
-              <div className="w-8 h-8 bg-[#26a269] rounded-lg flex items-center justify-center">
-                <img 
-                  src="/DevPath icon.png" 
-                  className="relative h-[300px] w-[500px] mx-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500" 
-                  alt="DevPath" 
-                />
-              </div>
-              <span className="text-gray-300">© {new Date().getFullYear()} DevPath</span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
