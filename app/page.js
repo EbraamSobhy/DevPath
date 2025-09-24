@@ -1,27 +1,11 @@
 import React from 'react';
 import { ArrowRight, Map, Sparkles, Star } from 'lucide-react';
+import Link from 'next/link'
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Navigation */}
-      <nav className="relative z-10 flex justify-between items-center px-8 py-6">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-[#26a269] rounded-lg flex items-center justify-center">
-            <img 
-              src="/DevPath icon.png" 
-              className="relative h-[300px] w-[500px] mx-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500" 
-              alt="DevPath" 
-            />
-          </div>
-          <span className="text-white font-bold text-xl">DevPath</span>
-        </div>
-        <div className="flex items-center space-x-6">
-          <a href="#" className="text-gray-300 hover:text-white transition-colors">Features</a>
-          <a href="#" className="text-gray-300 hover:text-white transition-colors">Docs</a>
-          <a href="#" className="text-gray-300 hover:text-white transition-colors">Pricing</a>
-        </div>
-      </nav>
+      {/* Navigation layout.js */}
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center px-8 pt-16 pb-24">
@@ -64,36 +48,29 @@ export default function Home() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <a
-            href="/docs/setup-nextjs"
-            className="group flex items-center space-x-2 px-8 py-4 rounded-xl bg-[#26a269] text-white font-semibold shadow-2xl hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300"
+          <Link
+            href="/roadmaps"
+            className="group flex items-center space-x-2 px-8 py-4 rounded-xl bg-[#26a269] text-white font-semibold shadow-2xl hover:shadow-green-500/25 hover:scale-105 transition-all duration-300"
           >
             <span>Get Started</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
         </div>        
       </div>
 
       {/* Enhanced footer */}
-      <footer className="relative z-10 border-t border-white/10 bg-black/20 backdrop-blur-sm">
+      <footer className="relative z-10 border-t border-white bg-black/20 backdrop-blur-sm ">
         <div className="max-w-6xl mx-auto px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+            <div className="flex items-center space-x-2 mb-4 md:mb-0 justify-center text-center flex-1 text-xl">
               <div className="w-8 h-8 bg-[#26a269] rounded-lg flex items-center justify-center">
                 <img 
-              src="/DevPath icon.png" 
-              className="relative h-[300px] w-[500px] mx-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500" 
-              alt="DevPath" 
-            />
+                  src="/DevPath icon.png" 
+                  className="relative h-[300px] w-[500px] mx-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500" 
+                  alt="DevPath" 
+                />
               </div>
               <span className="text-gray-300">© {new Date().getFullYear()} DevPath</span>
-            </div>
-            <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <span>Built with Next.js + Tailwind</span>
-              <div className="flex items-center space-x-1">
-                <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                <span>Open Source</span>
-              </div>
             </div>
           </div>
         </div>
