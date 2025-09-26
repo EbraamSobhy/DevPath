@@ -14,10 +14,10 @@ const items = [
 
 export default function Roadmaps() {
   return (
-    <div className="bg-black min-h-screen flex flex-col items-center justify-center">
+    <div className="bg-[#0f172a] min-h-screen flex flex-col items-center justify-center">
       {/* Title */}
-      <h1 className="text-5xl font-bold text-black mb-20 text-center px-8 py-4 rounded-xl bg-white shadow-2xl">
-        Frameworks
+      <h1 className="text-5xl font-bold text-white mb-20 text-center px-8 py-4 rounded-xl shadow-2xl">
+        Backend Frameworks
       </h1>
 
       {/* Cards */}

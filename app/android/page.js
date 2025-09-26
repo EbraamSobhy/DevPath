@@ -1,34 +1,291 @@
 "use client";
 
-import { useState, useCallback } from 'react';
-import { ReactFlow, applyNodeChanges, applyEdgeChanges, addEdge, Background, Controls } from '@xyflow/react';
-import '@xyflow/react/dist/style.css';
- 
+import { useState, useCallback } from "react";
+import {
+  ReactFlow,
+  applyNodeChanges,
+  applyEdgeChanges,
+  addEdge,
+  Background,
+  Controls,
+} from "@xyflow/react";
+import "@xyflow/react/dist/style.css";
+
+import { FaCode, FaJava, FaDatabase, FaGithub, FaAndroid, FaMobileAlt, FaGitAlt} from "react-icons/fa";
+import { SiKotlin, SiThealgorithms, SiAndroidstudio, SiJetpackcompose, SiJunit5, SiGradle } from "react-icons/si";
+import { PiAndroidLogoFill } from "react-icons/pi";
+import { IoIosCube, IoMdGitNetwork, IoLogoGooglePlaystore } from "react-icons/io";
+import { MdOutlineStorage,MdOutlineSecurity, MdOutlineArchitecture } from "react-icons/md";
+import { TbAutomation } from "react-icons/tb";
+import { FaGooglePlay } from "react-icons/fa";
+
 const initialNodes = [
-  { id: "n1", position: { x: 0, y: 0 }, data: { label: "Structured Programming" } },
-  { id: "n2", position: { x: 200, y: 0 }, data: { label: "Java or Kotlin" } },
-  { id: "n3", position: { x: 400, y: 0 }, data: { label: "Data Structures & Algorithms (DSA)" } },
+  { 
+    id: "n1", 
+    position: { x: 0, y: 0 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <FaCode style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Structured Programming</span>
+        </div>
+      ) 
+    },
+    style: { background: "#f87171", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
 
-  { id: "n4", position: { x: 600, y: 0 }, data: { label: "Android Studio IDE" } },
-  { id: "n6", position: { x: 800, y: 0 }, data: { label: "Android Components" } },
-  
-  { id: "n5", position: { x: 0, y: 150 }, data: { label: "UI Basics" } },
-  { id: "n7", position: { x: 200, y: 150 }, data: { label: "Jetpack Compose" } },
-  { id: "n8", position: { x: 400, y: 150 }, data: { label: "Android Jetpack Libraries" } },
+  { 
+    id: "n2", 
+    position: { x: 200, y: 0 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <SiKotlin style={{ fontSize: "24px", marginBottom: "4px" }} /><FaJava style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Java or Kotlin</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#3b82f6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
 
-  { id: "n9", position: { x: 600, y: 150 }, data: { label: "Dependency Injection" } },
-  { id: "n10", position: { x: 800, y: 150 }, data: { label: "Networking" } },
+  { 
+    id: "n3", 
+    position: { x: 400, y: 0 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <FaDatabase style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <SiThealgorithms style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Data Structures & Algorithms</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#facc15", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
 
-  { id: "n11", position: { x: 0, y: 300 }, data: { label: "Local Storage" } },
-  { id: "n12", position: { x: 200, y: 300 }, data: { label: "Permissions & Security" } },
-  { id: "n13", position: { x: 400, y: 300 }, data: { label: "Unit Testing → JUnit & Mockito" } },
-  { id: "n14", position: { x: 600, y: 300 }, data: { label: "UI testing → Espresso" } },
-  {id: "n15", position: { x: 800, y: 300 }, data: { label: "Git & GitHub" } },
-  { id: "n16", position: { x: 0, y: 450 }, data: { label: "Build Tools → Gradle" } },
-  { id: "n17", position: { x: 200, y: 450 }, data: { label: "CI/CD" } },
-  { id: "n18", position: { x: 400, y: 450 }, data: { label: "Architecture Patterns → MVVM & Clean Architecture" } },
-  { id: "n19", position: { x: 600, y: 450 }, data: { label: "Performance Optimization → Profiling & battery optimization." } },
-  { id: "n20", position: { x: 800, y: 450 }, data: { label: "Publishing → Google Play Store deployment & App signing" } },
+  { 
+    id: "n4", 
+    position: { x: 600, y: 0 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <SiAndroidstudio style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Android Studio IDE</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#14b8a6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n5", 
+    position: { x: 0, y: 150 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <FaAndroid style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Android Components</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#61dafb", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n6", 
+    position: { x: 800, y: 0 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <FaMobileAlt style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>UI Basics</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#6b7280", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n7", 
+    position: { x: 200, y: 150 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <SiJetpackcompose style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Jetpack Compose</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#4ade80", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n8", 
+    position: { x: 400, y: 150 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <PiAndroidLogoFill style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Android Jetpack Libraries</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#3b82f6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n9", 
+    position: { x: 600, y: 150 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <IoIosCube style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Dependency Injection</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#000000", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n10", 
+    position: { x: 800, y: 150 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <IoMdGitNetwork style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Networking</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#9333ea", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n11", 
+    position: { x: 0, y: 300 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <MdOutlineStorage style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Local Storage</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#f59e0b", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n12", 
+    position: { x: 200, y: 300 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <MdOutlineSecurity style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Permissions & Security</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#ef4444", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n13", 
+    position: { x: 400, y: 300 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <SiJunit5 style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Unit Testing → JUnit & Mockito</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#22c55e", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n14", 
+    position: { x: 600, y: 300 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <FaAndroid style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>UI testing → Espresso</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#0ea5e9", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n15", 
+    position: { x: 800, y: 300 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <FaGithub style={{ fontSize: "24px", marginBottom: "4px" }} /><FaGitAlt style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Git & GitHub</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#111827", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n16", 
+    position: { x: 0, y: 450 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <SiGradle style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Gradle</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#eab308", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n17", 
+    position: { x: 200, y: 450 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <TbAutomation style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>CI/CD</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#2563eb", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n18", 
+    position: { x: 400, y: 450 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <MdOutlineArchitecture style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>MVVM & Clean Architecture</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#10b981", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n19", 
+    position: { x: 600, y: 450 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <FaGooglePlay style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Google Play Store deployment</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#f43f5e", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
 ];
 
 const initialEdges = [
@@ -52,29 +309,27 @@ const initialEdges = [
   { id: "e16-17", source: "n16", target: "n17", animated: true },
   { id: "e17-18", source: "n17", target: "n18", animated: true },
   { id: "e18-19", source: "n18", target: "n19", animated: true },
-  { id: "e19-20", source: "n19", target: "n20", animated: true },
 ];
-
 
 export default function App() {
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
- 
+
   const onNodesChange = useCallback(
-    (changes) => setNodes((nodesSnapshot) => applyNodeChanges(changes, nodesSnapshot)),
-    [],
+    (changes) => setNodes((ns) => applyNodeChanges(changes, ns)),
+    []
   );
   const onEdgesChange = useCallback(
-    (changes) => setEdges((edgesSnapshot) => applyEdgeChanges(changes, edgesSnapshot)),
-    [],
+    (changes) => setEdges((es) => applyEdgeChanges(changes, es)),
+    []
   );
   const onConnect = useCallback(
-    (params) => setEdges((edgesSnapshot) => addEdge(params, edgesSnapshot)),
-    [],
+    (params) => setEdges((es) => addEdge({ ...params, style: { stroke: "#2563eb", strokeWidth: 2 } }, es)),
+    []
   );
- 
+
   return (
-    <div style={{ width: '100vw', height: '100vh' }}>
+    <div style={{ width: "100vw", height: "100vh", background: "linear-gradient(135deg, #1e293b, #0f172a)" }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -82,15 +337,11 @@ export default function App() {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         fitView
-        // nodesDraggable={false}
-        // nodesConnectable={false}
-        // elementsSelectable={false}
-        // zoomOnScroll={false}
-        // panOnDrag={false}    
+        defaultEdgeOptions={{ animated: true }}
       >
-        <Background />
-        {/* <Controls showZoom={false} showFitView={false} /> optional controls */}
-        </ReactFlow>
+        <Background gap={20} color="#475569" />
+        <Controls showInteractive={false} />
+      </ReactFlow>
     </div>
   );
 }

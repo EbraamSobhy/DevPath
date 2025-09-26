@@ -11,9 +11,8 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 
-import { FaHtml5, FaCss3Alt, FaReact, FaGithub, FaJs, FaNodeJs } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaReact, FaGithub, FaJs, FaMobileAlt } from "react-icons/fa";
 import { SiTailwindcss, SiTypescript, SiNextdotjs, SiJest, SiVitest, SiNetlify } from "react-icons/si";
-import { MdDesignServices } from "react-icons/md";
 
 const initialNodes = [
   { 
@@ -106,7 +105,7 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <MdDesignServices style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <FaMobileAlt style={{ fontSize: "24px", marginBottom: "4px" }} />
           <span>Responsive Design</span>
         </div>
       ) 
