@@ -11,13 +11,15 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 
-import { FaCode, FaJava, FaDatabase, FaGithub, FaAndroid, FaMobileAlt, FaGitAlt} from "react-icons/fa";
-import { SiKotlin, SiThealgorithms, SiAndroidstudio, SiJetpackcompose, SiJunit5, SiGradle } from "react-icons/si";
-import { PiAndroidLogoFill } from "react-icons/pi";
-import { IoIosCube, IoMdGitNetwork, IoLogoGooglePlaystore } from "react-icons/io";
-import { MdOutlineStorage,MdOutlineSecurity, MdOutlineArchitecture } from "react-icons/md";
-import { TbAutomation } from "react-icons/tb";
-import { FaGooglePlay } from "react-icons/fa";
+import { FaCode, FaJs, FaDatabase, FaGithub, FaAndroid, FaMobileAlt, FaGitAlt, FaHtml5, FaCss3Alt, FaReact } from "react-icons/fa";
+import { SiExpo, SiAndroidstudio, SiJest } from "react-icons/si";
+import { IoMdGitNetwork } from "react-icons/io";
+import { IoSettings } from "react-icons/io5";
+import { MdOutlineAppSettingsAlt, MdOutlineHttp } from "react-icons/md";
+import { TbAutomation, TbComponents, TbApi, TbAuth2Fa, TbDatabaseSearch } from "react-icons/tb";
+import { BiSolidNavigation } from "react-icons/bi";
+import { LuPackage } from "react-icons/lu";
+import { RiFirebaseFill } from "react-icons/ri";
 
 const initialNodes = [
   { 
@@ -40,8 +42,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaJava style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Java</span>
+          <FaJs style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>JavaScript</span>
         </div>
       ) 
     }, 
@@ -82,8 +84,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaAndroid style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Android Components</span>
+          <FaHtml5 style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>HTML</span>
         </div>
       ) 
     }, 
@@ -96,8 +98,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaMobileAlt style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>UI Basics</span>
+          <FaCss3Alt style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>CSS</span>
         </div>
       ) 
     }, 
@@ -110,8 +112,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <SiJetpackcompose style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Jetpack Compose</span>
+          <FaReact style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>React.js</span>
         </div>
       ) 
     }, 
@@ -124,8 +126,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <PiAndroidLogoFill style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Android Jetpack Libraries</span>
+          <SiExpo style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Expo CLI</span>
         </div>
       ) 
     }, 
@@ -138,8 +140,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <IoIosCube style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Dependency Injection</span>
+          <TbComponents style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Core components</span>
         </div>
       ) 
     }, 
@@ -152,8 +154,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <IoMdGitNetwork style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Networking</span>
+          <FaMobileAlt style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>React Native Styling</span>
         </div>
       ) 
     }, 
@@ -166,8 +168,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <MdOutlineStorage style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Local Storage</span>
+          <IoSettings style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>State management</span>
         </div>
       ) 
     }, 
@@ -180,8 +182,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <MdOutlineSecurity style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Permissions & Security</span>
+          <BiSolidNavigation style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Navigation</span>
         </div>
       ) 
     }, 
@@ -194,8 +196,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <SiJunit5 style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Unit Testing → JUnit & Mockito</span>
+          <IoMdGitNetwork style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Networking</span>
         </div>
       ) 
     }, 
@@ -208,8 +210,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaAndroid style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>UI testing → Espresso</span>
+          <TbApi style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Native APIs</span>
         </div>
       ) 
     }, 
@@ -222,8 +224,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaGithub style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Git & GitHub</span>
+          <FaMobileAlt style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>UI/UX principles</span>
         </div>
       ) 
     }, 
@@ -236,8 +238,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <SiGradle style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Gradle</span>
+          <MdOutlineHttp style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>REST APIs</span>
         </div>
       ) 
     }, 
@@ -250,8 +252,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <TbAutomation style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>CI/CD</span>
+          <TbAuth2Fa style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Authentication</span>
         </div>
       ) 
     }, 
@@ -264,8 +266,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <MdOutlineArchitecture style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>MVVM & Clean Architecture</span>
+          <TbDatabaseSearch style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Databases</span>
         </div>
       ) 
     }, 
@@ -278,8 +280,78 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaGooglePlay style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Google Play Store Deployment</span>
+          <SiJest style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Jest</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#f43f5e", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n20", 
+    position: { x: 600, y: 450 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <LuPackage style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Build & release (Android APK/AAB, iOS IPA)</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#f43f5e", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n21", 
+    position: { x: 800, y: 450 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <TbAutomation style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>CI/CD</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#f43f5e", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n22", 
+    position: { x: 0, y: 600 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <RiFirebaseFill style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Firebase</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#f43f5e", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n23", 
+    position: { x: 200, y: 600 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <FaGithub style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Git & GitHub</span>
+        </div>
+      ) 
+    }, 
+    style: { background: "#f43f5e", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+  },
+
+  { 
+    id: "n24", 
+    position: { x: 400, y: 600 }, 
+    data: { 
+      label: (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <MdOutlineAppSettingsAlt style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Deploy App</span>
         </div>
       ) 
     }, 
@@ -308,6 +380,11 @@ const initialEdges = [
   { id: "e16-17", source: "n16", target: "n17", animated: true },
   { id: "e17-18", source: "n17", target: "n18", animated: true },
   { id: "e18-19", source: "n18", target: "n19", animated: true },
+  { id: "e19-20", source: "n19", target: "n20", animated: true },
+  { id: "e20-21", source: "n20", target: "n21", animated: true },
+  { id: "e21-22", source: "n21", target: "n22", animated: true },
+  { id: "e22-23", source: "n22", target: "n23", animated: true },
+  { id: "e23-24", source: "n23", target: "n24", animated: true },
 ];
 
 export default function App() {

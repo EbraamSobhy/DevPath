@@ -11,13 +11,12 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 
-import { FaCode, FaJava, FaDatabase, FaGithub, FaAndroid, FaMobileAlt, FaGitAlt} from "react-icons/fa";
-import { SiKotlin, SiThealgorithms, SiAndroidstudio, SiJetpackcompose, SiJunit5, SiGradle } from "react-icons/si";
-import { PiAndroidLogoFill } from "react-icons/pi";
-import { IoIosCube, IoMdGitNetwork, IoLogoGooglePlaystore } from "react-icons/io";
-import { MdOutlineStorage,MdOutlineSecurity, MdOutlineArchitecture } from "react-icons/md";
+import { FaCode, FaApple, FaDatabase, FaGithub, FaAndroid, FaMobileAlt, FaGitAlt, FaSwift , FaAppStoreIos} from "react-icons/fa";
+import { SiThealgorithms, SiXcode } from "react-icons/si";
+import { IoMdGitNetwork, IoIosHammer } from "react-icons/io";
+import { MdOutlineSecurity, MdOutlineArchitecture } from "react-icons/md";
 import { TbAutomation } from "react-icons/tb";
-import { FaGooglePlay } from "react-icons/fa";
+import { GoPackage } from "react-icons/go";
 
 const initialNodes = [
   { 
@@ -40,12 +39,12 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaJava style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Java</span>
+          <FaSwift style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Swift</span>
         </div>
       ) 
     }, 
-    style: { background: "#3b82f6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+    style: { background: "#FF6F00", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
   },
 
   { 
@@ -68,12 +67,12 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <SiAndroidstudio style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Android Studio IDE</span>
+          <SiXcode style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Xcode IDE</span>
         </div>
       ) 
     }, 
-    style: { background: "#14b8a6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+    style: { background: "#1D75C0", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
   },
 
   { 
@@ -82,12 +81,12 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaAndroid style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Android Components</span>
+          <FaApple style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Apple Ecosystems</span>
         </div>
       ) 
     }, 
-    style: { background: "#61dafb", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+    style: { background: "#C0C0C0", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
   },
 
   { 
@@ -97,7 +96,7 @@ const initialNodes = [
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <FaMobileAlt style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>UI Basics</span>
+          <span>Swift UI</span>
         </div>
       ) 
     }, 
@@ -110,8 +109,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <SiJetpackcompose style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Jetpack Compose</span>
+          <FaDatabase style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Data Persistence</span>
         </div>
       ) 
     }, 
@@ -124,8 +123,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <PiAndroidLogoFill style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Android Jetpack Libraries</span>
+          <IoMdGitNetwork style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Networking</span>
         </div>
       ) 
     }, 
@@ -138,12 +137,12 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <IoIosCube style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Dependency Injection</span>
+          <MdOutlineArchitecture style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>MVVM & Clean Architecture</span>
         </div>
       ) 
     }, 
-    style: { background: "#000000", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+    style: { background: "#007AFF", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
   },
 
   { 
@@ -152,8 +151,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <IoMdGitNetwork style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Networking</span>
+          <GoPackage style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Swift Package Manager</span>
         </div>
       ) 
     }, 
@@ -166,8 +165,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <MdOutlineStorage style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Local Storage</span>
+          <IoIosHammer style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>Unit testing (XCTest)</span>
         </div>
       ) 
     }, 
@@ -180,8 +179,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <MdOutlineSecurity style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Permissions & Security</span>
+          <FaMobileAlt style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>UI testing</span>
         </div>
       ) 
     }, 
@@ -194,12 +193,12 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <SiJunit5 style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Unit Testing → JUnit & Mockito</span>
+          <FaGithub style={{ fontSize: "24px", marginBottom: "4px" }} />
+            <span>Git & GitHub</span>
         </div>
       ) 
     }, 
-    style: { background: "#22c55e", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
+    style: { background: "#000000", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
   },
 
   { 
@@ -208,8 +207,8 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaAndroid style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>UI testing → Espresso</span>
+          <TbAutomation style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>CI/CD</span>
         </div>
       ) 
     }, 
@@ -222,68 +221,12 @@ const initialNodes = [
     data: { 
       label: (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaGithub style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Git & GitHub</span>
+          <FaAppStoreIos style={{ fontSize: "24px", marginBottom: "4px" }} />
+          <span>App Store Deployment</span>
         </div>
       ) 
     }, 
     style: { background: "#111827", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n16", 
-    position: { x: 0, y: 450 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <SiGradle style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Gradle</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#eab308", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n17", 
-    position: { x: 200, y: 450 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <TbAutomation style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>CI/CD</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#2563eb", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n18", 
-    position: { x: 400, y: 450 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <MdOutlineArchitecture style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>MVVM & Clean Architecture</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#10b981", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n19", 
-    position: { x: 600, y: 450 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaGooglePlay style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Google Play Store Deployment</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#f43f5e", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
   },
 ];
 
