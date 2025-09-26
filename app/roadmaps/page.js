@@ -26,9 +26,9 @@ const items = [
 
 export default function Roadmaps() {
   return (
-    <div className="bg-black min-h-screen flex flex-col items-center justify-center p-10">
+    <div className="bg-[#0f172a] min-h-screen flex flex-col items-center justify-center p-10">
       {/* Title */}
-      <h1 className="text-5xl font-bold text-black mb-16 text-center w-[300px] py-4 rounded-xl bg-white shadow-2xl">
+      <h1 className="text-5xl font-bold text-white mb-16 text-center w-[300px] py-4 rounded-xl shadow-2xl">
         Roadmaps
       </h1>
 

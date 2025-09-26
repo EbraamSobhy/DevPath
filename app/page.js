@@ -4,13 +4,13 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="min-h-screen bg-[#0f172a] relative overflow-hidden">
       {/* Navigation layout.js */}
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center px-8 pt-16 pb-24">
         {/* Hero badge */}
-        <div className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gradient-to-r from-black to-[#26a269] backdrop-blur-sm border border-white mb-8 group hover:scale-105 transition-transform">
+        <div className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#000075] to-[#26a269] backdrop-blur-sm border border-white mb-8 group hover:scale-105 transition-transform">
           <Sparkles className="w-4 h-4 text-[#26a269]" />
           <span className="text-sm text-white">Built for modern development roadmaps</span>
         </div>
@@ -33,7 +33,7 @@ export default function Home() {
             <br />
             <span className="text-white">Explore Tech Roadmaps</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#f8fafc] max-w-2xl mx-auto leading-relaxed">
             Start your journey in Computer Science and Software Development with interactive roadmaps, clear milestones, and guided paths designed for beginners and students.
           </p>
         </div>
