@@ -15,9 +15,9 @@ const initialNodes = [
   { 
     id: "n1", 
     position: { x: 0, y: 0 }, 
-    data: { label: "Structured Programming" },
+    data: { label: "Mathematics and Statistics" },
     style: { 
-      background: "#f87171", 
+      background: "#1E3A8A",
       color: "white", 
       borderRadius: 12, 
       padding: 10, 
@@ -29,9 +29,9 @@ const initialNodes = [
   { 
     id: "n2", 
     position: { x: 200, y: 0 }, 
-    data: { label: "Swift" },
+    data: { label: "Excel" },
     style: { 
-      background: "#FF6F00", 
+      background: "#217346",
       color: "white", 
       borderRadius: 12, 
       padding: 10, 
@@ -43,203 +43,159 @@ const initialNodes = [
   { 
     id: "n3", 
     position: { x: 400, y: 0 }, 
-    data: { label: "Data Structures & Algorithms" },
+    data: { label: "Python" },
     style: { 
-      background: "#facc15", 
-      color: "#000", 
+      background: "#3776AB",
+      color: "white", 
       borderRadius: 12, 
       padding: 10, 
       fontWeight: "bold", 
-      fontSize: 15, 
+      fontSize: 15,
       boxShadow: "0 4px 12px rgba(0,0,0,0.2)" 
     } 
   },
   { 
     id: "n4", 
     position: { x: 600, y: 0 }, 
-    data: { label: "Xcode IDE" },
+    data: { label: "Pandas" },
     style: { 
-      background: "#1D75C0", 
+      background: "#150458",
       color: "white", 
       borderRadius: 12, 
       padding: 10, 
       fontWeight: "bold", 
-      fontSize: 15, 
+      fontSize: 15,
       boxShadow: "0 4px 12px rgba(0,0,0,0.2)" 
     } 
   },
   { 
     id: "n5", 
     position: { x: 0, y: 150 }, 
-    data: { label: "Apple Ecosystems" },
+    data: { label: "NumPy" },
     style: { 
-      background: "white", 
+      background: "#4DABCF",
       color: "#000", 
       borderRadius: 12, 
       padding: 10, 
       fontWeight: "bold", 
-      fontSize: 15, 
+      fontSize: 15,
       boxShadow: "0 4px 12px rgba(0,0,0,0.2)" 
     } 
   },
   { 
     id: "n6", 
     position: { x: 800, y: 0 }, 
-    data: { label: "Swift UI" },
+    data: { label: "Matplotlib" },
     style: { 
-      background: "red", 
+      background: "#11557C",
       color: "white", 
       borderRadius: 12, 
       padding: 10, 
       fontWeight: "bold", 
-      fontSize: 15, 
+      fontSize: 15,
       boxShadow: "0 4px 12px rgba(0,0,0,0.2)" 
     } 
   },
   { 
     id: "n7", 
     position: { x: 200, y: 150 }, 
-    data: { label: "Data Persistence" },
+    data: { label: "Seaborn" },
     style: { 
-      background: "#4ade80", 
-      color: "#000", 
+      background: "#268BD2",
+      color: "white", 
       borderRadius: 12, 
       padding: 10, 
       fontWeight: "bold", 
-      fontSize: 15, 
+      fontSize: 15,
       boxShadow: "0 4px 12px rgba(0,0,0,0.2)" 
     } 
   },
   { 
     id: "n8", 
     position: { x: 400, y: 150 }, 
-    data: { label: "Networking" },
+    data: { label: "R" },
     style: { 
-      background: "#3b82f6", 
+      background: "#276DC3",
       color: "white", 
       borderRadius: 12, 
       padding: 10, 
       fontWeight: "bold", 
-      fontSize: 15, 
+      fontSize: 15,
       boxShadow: "0 4px 12px rgba(0,0,0,0.2)" 
     } 
   },
   { 
     id: "n9", 
     position: { x: 600, y: 150 }, 
-    data: { label: "MVVM & Clean Architecture" },
+    data: { label: "SQL" },
     style: { 
-      background: "#007AFF", 
+      background: "#E38C00",
       color: "white", 
       borderRadius: 12, 
       padding: 10, 
       fontWeight: "bold", 
-      fontSize: 15, 
+      fontSize: 15,
       boxShadow: "0 4px 12px rgba(0,0,0,0.2)" 
     } 
   },
   { 
     id: "n10", 
     position: { x: 800, y: 150 }, 
-    data: { label: "Swift Package Manager" },
+    data: { label: "Tableau" },
     style: { 
-      background: "#9333ea", 
+      background: "#E97627",
       color: "white", 
       borderRadius: 12, 
       padding: 10, 
       fontWeight: "bold", 
-      fontSize: 15, 
+      fontSize: 15,
       boxShadow: "0 4px 12px rgba(0,0,0,0.2)" 
     } 
   },
   { 
     id: "n11", 
     position: { x: 0, y: 300 }, 
-    data: { label: "Unit Testing (XCTest)" },
+    data: { label: "Power BI" },
     style: { 
-      background: "#f59e0b", 
-      color: "white", 
+      background: "#F2C811",
+      color: "#000", 
       borderRadius: 12, 
       padding: 10, 
       fontWeight: "bold", 
-      fontSize: 15, 
+      fontSize: 15,
       boxShadow: "0 4px 12px rgba(0,0,0,0.2)" 
     } 
   },
   { 
     id: "n12", 
     position: { x: 200, y: 300 }, 
-    data: { label: "UI Testing" },
-    style: { 
-      background: "#ef4444", 
-      color: "white", 
-      borderRadius: 12, 
-      padding: 10, 
-      fontWeight: "bold", 
-      fontSize: 15, 
-      boxShadow: "0 4px 12px rgba(0,0,0,0.2)" 
-    } 
-  },
-  { 
-    id: "n13", 
-    position: { x: 400, y: 300 }, 
     data: { label: "Git & GitHub" },
     style: { 
-      background: "#000000", 
+      background: "#24292E",
       color: "white", 
       borderRadius: 12, 
       padding: 10, 
       fontWeight: "bold", 
-      fontSize: 15, 
+      fontSize: 15,
       boxShadow: "0 4px 12px rgba(0,0,0,0.2)" 
     } 
-  },
-  { 
-    id: "n14", 
-    position: { x: 600, y: 300 }, 
-    data: { label: "CI/CD" },
-    style: { 
-      background: "#0ea5e9", 
-      color: "white", 
-      borderRadius: 12, 
-      padding: 10, 
-      fontWeight: "bold", 
-      fontSize: 15, 
-      boxShadow: "0 4px 12px rgba(0,0,0,0.2)" 
-    } 
-  },
-  { 
-    id: "n15", 
-    position: { x: 800, y: 300 }, 
-    data: { label: "App Store Deployment" },
-    style: { 
-      background: "#111827", 
-      color: "white", 
-      borderRadius: 12, 
-      padding: 10, 
-      fontWeight: "bold", 
-      fontSize: 15, 
-      boxShadow: "0 4px 12px rgba(0,0,0,0.2)" 
-    } 
-  },
+  }
 ];
 
 const initialEdges = [
-  { id: "e1-2", source: "n1", target: "n2", animated: true, style: { stroke: "#f87171", strokeWidth: 2 } },
-  { id: "e2-3", source: "n2", target: "n3", animated: true, style: { stroke: "#FF6F00", strokeWidth: 2 } },
-  { id: "e3-4", source: "n3", target: "n4", animated: true, style: { stroke: "#facc15", strokeWidth: 2 } },
-  { id: "e4-6", source: "n4", target: "n6", animated: true, style: { stroke: "#1D75C0", strokeWidth: 2 } },
-  { id: "e6-5", source: "n6", target: "n5", animated: true, style: { stroke: "red", strokeWidth: 2 } },
-  { id: "e5-7", source: "n5", target: "n7", animated: true, style: { stroke: "white", strokeWidth: 2 } },
-  { id: "e7-8", source: "n7", target: "n8", animated: true, style: { stroke: "#4ade80", strokeWidth: 2 } },
-  { id: "e8-9", source: "n8", target: "n9", animated: true, style: { stroke: "#3b82f6", strokeWidth: 2 } },
-  { id: "e9-10", source: "n9", target: "n10", animated: true, style: { stroke: "#007AFF", strokeWidth: 2 } },
-  { id: "e10-11", source: "n10", target: "n11", animated: true, style: { stroke: "#9333ea", strokeWidth: 2 } },
-  { id: "e11-12", source: "n11", target: "n12", animated: true, style: { stroke: "#f59e0b", strokeWidth: 2 } },
-  { id: "e12-13", source: "n12", target: "n13", animated: true, style: { stroke: "#ef4444", strokeWidth: 2 } },
-  { id: "e13-14", source: "n13", target: "n14", animated: true, style: { stroke: "#000000", strokeWidth: 2 } },
-  { id: "e14-15", source: "n14", target: "n15", animated: true, style: { stroke: "#0ea5e9", strokeWidth: 2 } },
+  { id: "e1-2", source: "n1", target: "n2", animated: true, style: { stroke: "#1E3A8A", strokeWidth: 2 } },
+  { id: "e2-3", source: "n2", target: "n3", animated: true, style: { stroke: "#217346", strokeWidth: 2 } },
+  { id: "e3-4", source: "n3", target: "n4", animated: true, style: { stroke: "#3776AB", strokeWidth: 2 } },
+  { id: "e4-6", source: "n4", target: "n6", animated: true, style: { stroke: "#150458", strokeWidth: 2 } },
+  { id: "e6-5", source: "n6", target: "n5", animated: true, style: { stroke: "#11557C", strokeWidth: 2 } },
+  { id: "e5-7", source: "n5", target: "n7", animated: true, style: { stroke: "#4DABCF", strokeWidth: 2 } },
+  { id: "e7-8", source: "n7", target: "n8", animated: true, style: { stroke: "#268BD2", strokeWidth: 2 } },
+  { id: "e8-9", source: "n8", target: "n9", animated: true, style: { stroke: "#276DC3", strokeWidth: 2 } },
+  { id: "e9-10", source: "n9", target: "n10", animated: true, style: { stroke: "#E38C00", strokeWidth: 2 } },
+  { id: "e10-11", source: "n10", target: "n11", animated: true, style: { stroke: "#E97627", strokeWidth: 2 } },
+  { id: "e11-12", source: "n11", target: "n12", animated: true, style: { stroke: "#F2C811", strokeWidth: 2 } },
 ];
+
 
 export default function App() {
   const [nodes, setNodes] = useState(initialNodes);

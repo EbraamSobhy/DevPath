@@ -7,6 +7,7 @@ import { FaAppStoreIos, FaReact } from "react-icons/fa";
 import { FaFlutter } from "react-icons/fa6";
 import { MdAnalytics } from "react-icons/md";
 import { GiArtificialIntelligence } from "react-icons/gi";
+import { IoLogoGameControllerB } from "react-icons/io";
 
 const items = [
   { name: "Frontend Development", path: "/frontend", icon: <LuCodeXml size={32} /> },
@@ -15,13 +16,13 @@ const items = [
   { name: "Mobile Android Development", path: "/android", icon: <SiAndroid size={32} /> },
   { name: "Mobile iOS Development", path: "/ios", icon: <FaAppStoreIos size={32} /> },
   { name: "React Native Mobile Development", path: "/react-native", icon: <FaReact size={32} /> },
-  { name: "Flutter Mobile Development", path: "/flutter", icon: <FaFlutter size={32} /> },
   { name: "Data Analysis", path: "/data-analysis", icon: <MdAnalytics size={32} /> },
   { name: "Data Engineering", path: "/data-engineering", icon: <Database size={32} /> },
   { name: "Data Science", path: "/data-science", icon: <Brain size={32} /> },
   { name: "Artificial Intelligence", path: "/ai", icon: <GiArtificialIntelligence size={32} /> },
   { name: "Machine Learning", path: "/ml", icon: <Cpu size={32} /> },
   { name: "DevOps Engineering", path: "/devops", icon: <Workflow size={32} /> },
+  { name: "Game Development", path: "/game", icon: <IoLogoGameControllerB size={32} /> },
 ];
 
 export default function Roadmaps() {

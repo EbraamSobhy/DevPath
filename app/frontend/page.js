@@ -11,163 +11,18 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 
-import { FaHtml5, FaCss3Alt, FaReact, FaGithub, FaJs, FaMobileAlt } from "react-icons/fa";
-import { SiTailwindcss, SiTypescript, SiNextdotjs, SiJest, SiVitest, SiNetlify } from "react-icons/si";
-
 const initialNodes = [
-  { 
-    id: "n1", 
-    position: { x: 0, y: 0 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaHtml5 style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>HTML</span>
-        </div>
-      ) 
-    },
-    style: { background: "#f87171", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n2", 
-    position: { x: 200, y: 0 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaCss3Alt style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>CSS</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#60a5fa", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n3", 
-    position: { x: 400, y: 0 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaJs style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>JavaScript</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#facc15", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n4", 
-    position: { x: 600, y: 0 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <SiTailwindcss style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Tailwind CSS</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#14b8a6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n5", 
-    position: { x: 0, y: 150 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaReact style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>React.js</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#61dafb", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n6", 
-    position: { x: 800, y: 0 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaGithub style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Git & GitHub</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#6b7280", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n7", 
-    position: { x: 200, y: 150 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <FaMobileAlt style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Responsive Design</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#4ade80", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n8", 
-    position: { x: 400, y: 150 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <SiTypescript style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>TypeScript</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#3b82f6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n9", 
-    position: { x: 600, y: 150 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <SiNextdotjs style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Next.js</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#000000", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n10", 
-    position: { x: 800, y: 150 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <SiJest style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Testing (Jest, Vitest)</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#9333ea", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
-
-  { 
-    id: "n11", 
-    position: { x: 0, y: 300 }, 
-    data: { 
-      label: (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <SiNetlify style={{ fontSize: "24px", marginBottom: "4px" }} />
-          <span>Deploy Web App on Netlify</span>
-        </div>
-      ) 
-    }, 
-    style: { background: "#f472b6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } 
-  },
+  { id: "n1", position: { x: 0, y: 0 }, data: { label: "HTML" }, style: { background: "#f87171", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n2", position: { x: 200, y: 0 }, data: { label: "CSS" }, style: { background: "#60a5fa", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n3", position: { x: 400, y: 0 }, data: { label: "JavaScript" }, style: { background: "#facc15", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n4", position: { x: 600, y: 0 }, data: { label: "Tailwind CSS" }, style: { background: "#14b8a6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n5", position: { x: 0, y: 150 }, data: { label: "React.js" }, style: { background: "#61dafb", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n6", position: { x: 800, y: 0 }, data: { label: "Git & GitHub" }, style: { background: "#6b7280", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n7", position: { x: 200, y: 150 }, data: { label: "Responsive Design" }, style: { background: "#4ade80", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n8", position: { x: 400, y: 150 }, data: { label: "TypeScript" }, style: { background: "#3b82f6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n9", position: { x: 600, y: 150 }, data: { label: "Next.js" }, style: { background: "#000000", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n10", position: { x: 800, y: 150 }, data: { label: "Testing (Jest, Vitest)" }, style: { background: "#9333ea", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n11", position: { x: 0, y: 300 }, data: { label: "Deploy Web App on Netlify" }, style: { background: "#f472b6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
 ];
 
 const initialEdges = [
@@ -196,7 +51,8 @@ export default function App() {
     []
   );
   const onConnect = useCallback(
-    (params) => setEdges((es) => addEdge({ ...params, style: { stroke: "#2563eb", strokeWidth: 2 } }, es)),
+    (params) =>
+      setEdges((es) => addEdge({ ...params, style: { stroke: "#2563eb", strokeWidth: 2 } }, es)),
     []
   );
 
