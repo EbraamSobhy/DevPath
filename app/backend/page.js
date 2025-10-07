@@ -6,10 +6,10 @@ import { FaJava } from "react-icons/fa";
 import { BiLogoGoLang } from "react-icons/bi";
 
 const items = [
-  { name: "Java", path: "/frontend", icon: <FaJava size={32} /> },
-  { name: "Python", path: "/backend", icon: <FaPython size={32} /> },
-  { name: "Go-Golang", path: "/fullstack", icon: <BiLogoGoLang size={40} /> },
-  { name: "JavaScript", path: "/android", icon: <IoLogoJavascript size={32} /> },
+  { name: "Java", path: "/java", icon: <FaJava size={32} /> },
+  { name: "Python", path: "/python", icon: <FaPython size={32} /> },
+  { name: "Go-Golang", path: "/go", icon: <BiLogoGoLang size={40} /> },
+  { name: "JavaScript", path: "/javaScript", icon: <IoLogoJavascript size={32} /> },
 ];
 
 export default function Roadmaps() {
