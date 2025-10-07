@@ -17,7 +17,7 @@ const initialNodes = [
     position: { x: 0, y: 0 },
     data: { label: "Structured Programming" },
     style: {
-      background: "#f87171",
+      background: "#ef4444",
       color: "white",
       borderRadius: 12,
       padding: 10,
@@ -31,8 +31,8 @@ const initialNodes = [
     position: { x: 200, y: 0 },
     data: { label: "JavaScript" },
     style: {
-      background: "#3b82f6",
-      color: "white",
+      background: "#f7df1e",
+      color: "#000",
       borderRadius: 12,
       padding: 10,
       fontWeight: "bold",
@@ -45,8 +45,8 @@ const initialNodes = [
     position: { x: 400, y: 0 },
     data: { label: "Data Structures & Algorithms" },
     style: {
-      background: "#facc15",
-      color: "#000",
+      background: "#22c55e",
+      color: "white",
       borderRadius: 12,
       padding: 10,
       fontWeight: "bold",
@@ -59,8 +59,8 @@ const initialNodes = [
     position: { x: 600, y: 0 },
     data: { label: "Android Studio IDE" },
     style: {
-      background: "#14b8a6",
-      color: "white",
+      background: "#3ddc84",
+      color: "#000",
       borderRadius: 12,
       padding: 10,
       fontWeight: "bold",
@@ -73,8 +73,8 @@ const initialNodes = [
     position: { x: 800, y: 0 },
     data: { label: "HTML" },
     style: {
-      background: "#61dafb",
-      color: "#000",
+      background: "#e34f26",
+      color: "white",
       borderRadius: 12,
       padding: 10,
       fontWeight: "bold",
@@ -87,7 +87,7 @@ const initialNodes = [
     position: { x: 0, y: 150 },
     data: { label: "CSS" },
     style: {
-      background: "red",
+      background: "#264de4",
       color: "white",
       borderRadius: 12,
       padding: 10,
@@ -101,7 +101,7 @@ const initialNodes = [
     position: { x: 200, y: 150 },
     data: { label: "React.js" },
     style: {
-      background: "#4ade80",
+      background: "#61dafb",
       color: "#000",
       borderRadius: 12,
       padding: 10,
@@ -115,7 +115,7 @@ const initialNodes = [
     position: { x: 400, y: 150 },
     data: { label: "Expo CLI" },
     style: {
-      background: "#3b82f6",
+      background: "#000020",
       color: "white",
       borderRadius: 12,
       padding: 10,
@@ -129,7 +129,7 @@ const initialNodes = [
     position: { x: 600, y: 150 },
     data: { label: "Core Components" },
     style: {
-      background: "#000000",
+      background: "#0ea5e9",
       color: "white",
       borderRadius: 12,
       padding: 10,
@@ -185,7 +185,7 @@ const initialNodes = [
     position: { x: 400, y: 300 },
     data: { label: "Networking" },
     style: {
-      background: "#22c55e",
+      background: "#10b981",
       color: "white",
       borderRadius: 12,
       padding: 10,
@@ -213,7 +213,7 @@ const initialNodes = [
     position: { x: 800, y: 300 },
     data: { label: "UI/UX Principles" },
     style: {
-      background: "#111827",
+      background: "#1f2937",
       color: "white",
       borderRadius: 12,
       padding: 10,
@@ -227,7 +227,7 @@ const initialNodes = [
     position: { x: 0, y: 450 },
     data: { label: "REST APIs" },
     style: {
-      background: "#eab308",
+      background: "#16a34a",
       color: "white",
       borderRadius: 12,
       padding: 10,
@@ -255,7 +255,7 @@ const initialNodes = [
     position: { x: 400, y: 450 },
     data: { label: "Databases" },
     style: {
-      background: "#10b981",
+      background: "#f97316",
       color: "white",
       borderRadius: 12,
       padding: 10,
@@ -269,7 +269,7 @@ const initialNodes = [
     position: { x: 600, y: 450 },
     data: { label: "Jest" },
     style: {
-      background: "#f43f5e",
+      background: "#99425b",
       color: "white",
       borderRadius: 12,
       padding: 10,
@@ -283,7 +283,7 @@ const initialNodes = [
     position: { x: 600, y: 450 },
     data: { label: "Build & Release (APK/AAB/IPA)" },
     style: {
-      background: "#f43f5e",
+      background: "#6b7280",
       color: "white",
       borderRadius: 12,
       padding: 10,
@@ -297,7 +297,7 @@ const initialNodes = [
     position: { x: 800, y: 450 },
     data: { label: "CI/CD" },
     style: {
-      background: "#f43f5e",
+      background: "#8b5cf6",
       color: "white",
       borderRadius: 12,
       padding: 10,
@@ -311,8 +311,8 @@ const initialNodes = [
     position: { x: 0, y: 600 },
     data: { label: "Firebase" },
     style: {
-      background: "#f43f5e",
-      color: "white",
+      background: "#ffca28",
+      color: "#000",
       borderRadius: 12,
       padding: 10,
       fontWeight: "bold",
@@ -325,7 +325,7 @@ const initialNodes = [
     position: { x: 200, y: 600 },
     data: { label: "Git & GitHub" },
     style: {
-      background: "#f43f5e",
+      background: "#000000",
       color: "white",
       borderRadius: 12,
       padding: 10,
@@ -339,7 +339,7 @@ const initialNodes = [
     position: { x: 400, y: 600 },
     data: { label: "Deploy App" },
     style: {
-      background: "#f43f5e",
+      background: "#15803d",
       color: "white",
       borderRadius: 12,
       padding: 10,
@@ -351,31 +351,30 @@ const initialNodes = [
 ];
 
 const initialEdges = [
-  { id: "e1-2", source: "n1", target: "n2", animated: true, style: { stroke: "#f87171", strokeWidth: 2 } },
-  { id: "e2-3", source: "n2", target: "n3", animated: true, style: { stroke: "#3b82f6", strokeWidth: 2 } },
-  { id: "e3-4", source: "n3", target: "n4", animated: true, style: { stroke: "#facc15", strokeWidth: 2 } },
-  { id: "e4-5", source: "n4", target: "n5", animated: true, style: { stroke: "#14b8a6", strokeWidth: 2 } },
-  { id: "e5-6", source: "n5", target: "n6", animated: true, style: { stroke: "#61dafb", strokeWidth: 2 } },
-  { id: "e6-7", source: "n6", target: "n7", animated: true, style: { stroke: "red", strokeWidth: 2 } },
-  { id: "e7-8", source: "n7", target: "n8", animated: true, style: { stroke: "#4ade80", strokeWidth: 2 } },
-  { id: "e8-9", source: "n8", target: "n9", animated: true, style: { stroke: "#3b82f6", strokeWidth: 2 } },
-  { id: "e9-10", source: "n9", target: "n10", animated: true, style: { stroke: "#000000", strokeWidth: 2 } },
+  { id: "e1-2", source: "n1", target: "n2", animated: true, style: { stroke: "#ef4444", strokeWidth: 2 } },
+  { id: "e2-3", source: "n2", target: "n3", animated: true, style: { stroke: "#f7df1e", strokeWidth: 2 } },
+  { id: "e3-4", source: "n3", target: "n4", animated: true, style: { stroke: "#22c55e", strokeWidth: 2 } },
+  { id: "e4-5", source: "n4", target: "n5", animated: true, style: { stroke: "#3ddc84", strokeWidth: 2 } },
+  { id: "e5-6", source: "n5", target: "n6", animated: true, style: { stroke: "#e34f26", strokeWidth: 2 } },
+  { id: "e6-7", source: "n6", target: "n7", animated: true, style: { stroke: "#264de4", strokeWidth: 2 } },
+  { id: "e7-8", source: "n7", target: "n8", animated: true, style: { stroke: "#61dafb", strokeWidth: 2 } },
+  { id: "e8-9", source: "n8", target: "n9", animated: true, style: { stroke: "#000020", strokeWidth: 2 } },
+  { id: "e9-10", source: "n9", target: "n10", animated: true, style: { stroke: "#0ea5e9", strokeWidth: 2 } },
   { id: "e10-11", source: "n10", target: "n11", animated: true, style: { stroke: "#9333ea", strokeWidth: 2 } },
   { id: "e11-12", source: "n11", target: "n12", animated: true, style: { stroke: "#f59e0b", strokeWidth: 2 } },
   { id: "e12-13", source: "n12", target: "n13", animated: true, style: { stroke: "#ef4444", strokeWidth: 2 } },
-  { id: "e13-14", source: "n13", target: "n14", animated: true, style: { stroke: "#22c55e", strokeWidth: 2 } },
+  { id: "e13-14", source: "n13", target: "n14", animated: true, style: { stroke: "#10b981", strokeWidth: 2 } },
   { id: "e14-15", source: "n14", target: "n15", animated: true, style: { stroke: "#0ea5e9", strokeWidth: 2 } },
-  { id: "e15-16", source: "n15", target: "n16", animated: true, style: { stroke: "#111827", strokeWidth: 2 } },
-  { id: "e16-17", source: "n16", target: "n17", animated: true, style: { stroke: "#eab308", strokeWidth: 2 } },
+  { id: "e15-16", source: "n15", target: "n16", animated: true, style: { stroke: "#1f2937", strokeWidth: 2 } },
+  { id: "e16-17", source: "n16", target: "n17", animated: true, style: { stroke: "#16a34a", strokeWidth: 2 } },
   { id: "e17-18", source: "n17", target: "n18", animated: true, style: { stroke: "#2563eb", strokeWidth: 2 } },
-  { id: "e18-19", source: "n18", target: "n19", animated: true, style: { stroke: "#10b981", strokeWidth: 2 } },
-  { id: "e19-20", source: "n19", target: "n20", animated: true, style: { stroke: "#f43f5e", strokeWidth: 2 } },
-  { id: "e20-21", source: "n20", target: "n21", animated: true, style: { stroke: "#f43f5e", strokeWidth: 2 } },
-  { id: "e21-22", source: "n21", target: "n22", animated: true, style: { stroke: "#f43f5e", strokeWidth: 2 } },
-  { id: "e22-23", source: "n22", target: "n23", animated: true, style: { stroke: "#f43f5e", strokeWidth: 2 } },
-  { id: "e23-24", source: "n23", target: "n24", animated: true, style: { stroke: "#f43f5e", strokeWidth: 2 } },
+  { id: "e18-19", source: "n18", target: "n19", animated: true, style: { stroke: "#f97316", strokeWidth: 2 } },
+  { id: "e19-20", source: "n19", target: "n20", animated: true, style: { stroke: "#99425b", strokeWidth: 2 } },
+  { id: "e20-21", source: "n20", target: "n21", animated: true, style: { stroke: "#6b7280", strokeWidth: 2 } },
+  { id: "e21-22", source: "n21", target: "n22", animated: true, style: { stroke: "#8b5cf6", strokeWidth: 2 } },
+  { id: "e22-23", source: "n22", target: "n23", animated: true, style: { stroke: "#ffca28", strokeWidth: 2 } },
+  { id: "e23-24", source: "n23", target: "n24", animated: true, style: { stroke: "#000000", strokeWidth: 2 } },
 ];
-
 
 export default function App() {
   const [nodes, setNodes] = useState(initialNodes);

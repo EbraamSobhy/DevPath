@@ -253,6 +253,17 @@ const initialNodes = [
       borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15,
       boxShadow: "0 4px 12px rgba(0,0,0,0.2)"
     } 
+  },
+  { 
+    id: "n23", 
+    position: { x: 400, y: 600 }, 
+    data: { label: "Git and GitHub" },
+    style: { 
+      background: "#000000",
+      color: "white",
+      borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15,
+      boxShadow: "0 4px 12px rgba(0,0,0,0.2)"
+    } 
   }
 ];
 
@@ -277,7 +288,8 @@ const initialEdges = [
   { id: "e18-19", source: "n18", target: "n19", animated: true, style: { stroke: "#E64A19", strokeWidth: 2 } },
   { id: "e19-20", source: "n19", target: "n20", animated: true, style: { stroke: "#007ACC", strokeWidth: 2 } },
   { id: "e20-21", source: "n20", target: "n21", animated: true, style: { stroke: "#E25A1C", strokeWidth: 2 } },
-  { id: "e21-22", source: "n21", target: "n22", animated: true, style: { stroke: "#4285F4", strokeWidth: 2 } }
+  { id: "e21-22", source: "n21", target: "n22", animated: true, style: { stroke: "#4285F4", strokeWidth: 2 } },
+  { id: "e22-23", source: "n22", target: "n23", animated: true, style: { stroke: "#000000", strokeWidth: 2 } },
 ];
 
 export default function App() {

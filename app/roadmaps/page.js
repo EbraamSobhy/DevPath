@@ -22,7 +22,7 @@ const items = [
   { name: "Artificial Intelligence", path: "/ai", icon: <GiArtificialIntelligence size={32} /> },
   { name: "Machine Learning", path: "/ml", icon: <Cpu size={32} /> },
   { name: "DevOps Engineering", path: "/devops", icon: <Workflow size={32} /> },
-  { name: "Game Development", path: "/game", icon: <IoLogoGameControllerB size={32} /> },
+  { name: "Game Development", path: "/game-roadmap", icon: <IoLogoGameControllerB size={32} /> },
 ];
 
 export default function Roadmaps() {
