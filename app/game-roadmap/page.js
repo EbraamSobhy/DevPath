@@ -5,8 +5,8 @@ import { FaJava } from "react-icons/fa";
 import { FaUnity } from "react-icons/fa6";
 
 const items = [
-  { name: "Unreal (C++)", path: "/Unreal", icon: <SiUnrealengine size={32} /> },
-  { name: "Unity (C#)", path: "/Unity", icon: <FaUnity size={32} /> },
+  { name: "Unreal (C++)", path: "/unreal", icon: <SiUnrealengine size={32} /> },
+  { name: "Unity (C#)", path: "/unity", icon: <FaUnity size={32} /> },
 ];
 
 export default function Roadmaps() {

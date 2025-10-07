@@ -12,7 +12,6 @@ import { IoLogoGameControllerB } from "react-icons/io";
 const items = [
   { name: "Frontend Development", path: "/frontend", icon: <LuCodeXml size={32} /> },
   { name: "Backend Development", path: "/backend", icon: <Server size={32} /> },
-  { name: "FullStack Development", path: "/fullstack", icon: <Code size={32} /> },
   { name: "Mobile Android Development", path: "/android", icon: <SiAndroid size={32} /> },
   { name: "Mobile iOS Development", path: "/ios", icon: <FaAppStoreIos size={32} /> },
   { name: "React Native Mobile Development", path: "/react-native", icon: <FaReact size={32} /> },

@@ -12,7 +12,7 @@ export default function Home() {
         {/* Hero badge */}
         <div className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#000075] to-[#26a269] backdrop-blur-sm border border-white mb-8 group hover:scale-105 transition-transform">
           <Sparkles className="w-4 h-4 text-[#26a269]" />
-          <span className="text-sm text-white">Built for modern development roadmaps</span>
+          <span className="text-sm text-white">Built for modern development  roadmaps</span>
         </div>
 
         {/* Main logo area */}
