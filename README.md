@@ -1,8 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <h1 style="color: white">Welcome to Code Quest Quiz App</h1>
+<br>
+  <p align="center">
+  <img src="public/DevPathLogo.png" alt="image" width="200" height="200">
+    </p>
+</div>
+<br>
+
+**Code Quest Quiz App** is an Tech Roadmap platform built with [Next.js](https://nextjs.org) interactive Roadmaps that allows Computer Science students and any beginner to start in Tech Field.
+
+---
+
+## Features
+
+The DevPath app seems to offer interactive roadmaps for various tech fields such as:
+
+*   Frontend Development
+*   Backend Development
+*   Mobile Android Development
+*   iOS Development
+*   Game Development
+*   Machine Learning
+*   Data Analysis
+*   Data Engineering
+*   DevOps
+*   Python
+*   JavaScript
+*   Unreal Engine
+*   Unity
+
+These roadmaps provide clear milestones and guided paths designed for beginners and students. The app uses React Flow to create interactive and visual roadmaps, highlighting key concepts and technologies in each field.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (18+ recommended)
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/EbraamSobhy/DevPath.git
+cd Code-Quest-Quiz-App
+```
+
+Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+### Running the Development Server
+
+Start the app locally:
 
 ```bash
 npm run dev
@@ -14,23 +75,84 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Folder Structure
 
-## Learn More
+```
+DevPath Folder Structure
 
-To learn more about Next.js, take a look at the following resources:
+.gitignore
+README.md
+app/
+eslint.config.mjs
+jsconfig.json
+netlify.toml
+next.config.mjs
+package-lock.json
+package.json
+postcss.config.mjs
+public/
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+app/ Folder Structure:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ai/
+android/
+backend/
+data-analysis/
+data-engineering/
+data-science/
+devops/
+favicon.ico
+frontend/
+game-roadmap/
+globals.css
+ios/
+javascript/
+layout.js
+ml/
+page.js
+python/
+react-native/
+roadmaps/
+unity/
+unreal/
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[DevPath.Netlify](https://roadtodev.netlify.app/)
+
+---
+
+## Contributing
+
+Feel free to fork the repo and open pull requests!
+
+---
+
+## License
+
+MIT
+
+---
+
+## Credits
+
+Created by [EbraamSobhy](https://github.com/EbraamSobhy).
+
+---
+
+Based on the code search results, here are some of the libraries used in this app:
+
+*   **next/link:** Used for creating links between pages.
+*   **lucide-react:** Used for icons.
+*   **react-icons/lu, react-icons/si, react-icons/fa, react-icons/md, react-icons/gi, react-icons/io, react-icons/ri:** Used for icons from different icon libraries.
+*   **next/font/google:** Used for importing fonts from Google Fonts.
+*   **reactflow:** Used for creating interactive graphs and diagrams.
+
+It appears the app uses React and Next.js, along with various icon libraries and ReactFlow for visualizing roadmaps.
