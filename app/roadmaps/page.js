@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import { Code, Server, Smartphone, Database, Cpu, Brain, Wrench, Workflow } from "lucide-react"; 
+import { Code, Server, Smartphone, Database, Workflow } from "lucide-react"; 
 import { LuCodeXml } from "react-icons/lu";
 import { SiAndroid } from "react-icons/si";
-import { FaAppStoreIos, FaReact } from "react-icons/fa";
-import { FaFlutter } from "react-icons/fa6";
+import { FaAppStoreIos, FaReact, FaPython } from "react-icons/fa";
 import { MdAnalytics } from "react-icons/md";
 import { GiArtificialIntelligence } from "react-icons/gi";
 import { IoLogoGameControllerB } from "react-icons/io";
+import { RiRobot2Fill } from "react-icons/ri";
 
 const items = [
   { name: "Frontend Development", path: "/frontend", icon: <LuCodeXml size={32} /> },
@@ -17,9 +17,9 @@ const items = [
   { name: "React Native Mobile Development", path: "/react-native", icon: <FaReact size={32} /> },
   { name: "Data Analysis", path: "/data-analysis", icon: <MdAnalytics size={32} /> },
   { name: "Data Engineering", path: "/data-engineering", icon: <Database size={32} /> },
-  { name: "Data Science", path: "/data-science", icon: <Brain size={32} /> },
+  { name: "Data Science", path: "/data-science", icon: <FaPython size={32} /> },
   { name: "Artificial Intelligence", path: "/ai", icon: <GiArtificialIntelligence size={32} /> },
-  { name: "Machine Learning", path: "/ml", icon: <Cpu size={32} /> },
+  { name: "Machine Learning", path: "/ml", icon: <RiRobot2Fill size={32} /> },
   { name: "DevOps Engineering", path: "/devops", icon: <Workflow size={32} /> },
   { name: "Game Development", path: "/game-roadmap", icon: <IoLogoGameControllerB size={32} /> },
 ];

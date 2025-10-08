@@ -9,7 +9,7 @@ const items = [
   { name: "Java", path: "/java", icon: <FaJava size={32} /> },
   { name: "Python", path: "/python", icon: <FaPython size={32} /> },
   { name: "Go-Golang", path: "/go", icon: <BiLogoGoLang size={40} /> },
-  { name: "JavaScript", path: "/javaScript", icon: <IoLogoJavascript size={32} /> },
+  { name: "JavaScript", path: "/javascript", icon: <IoLogoJavascript size={32} /> },
 ];
 
 export default function Roadmaps() {
