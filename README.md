@@ -7,7 +7,7 @@
 </div>
 <br>
 
-**Code Quest Quiz App** is an Tech Roadmap platform built with [Next.js](https://nextjs.org) interactive Roadmaps that allows Computer Science students and any beginner to start in Tech Field.
+**DevPath Platform** is an Tech Roadmap platform built with [Next.js](https://nextjs.org) interactive Roadmaps that allows Computer Science students and any beginner to start in Tech Field.
 
 ---
 
