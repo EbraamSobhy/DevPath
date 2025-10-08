@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 style="color: white">Welcome to Code Quest Quiz App</h1>
+  <h1 style="color: white">Welcome to DevPath Platform</h1>
 <br>
   <p align="center">
   <img src="public/DevPathLogo.png" alt="image" width="200" height="200">
