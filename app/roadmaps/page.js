@@ -26,14 +26,14 @@ const items = [
 
 export default function Roadmaps() {
   return (
-    <div className="bg-[#0f172a] min-h-screen flex flex-col items-center justify-center p-10">
+    <div className="bg-[#0f172a] max-h-screen flex flex-col items-center justify-center p-10">
       {/* Title */}
       <h1 className="text-5xl font-bold text-white mb-16 text-center w-[300px] py-4 rounded-xl shadow-2xl">
         Roadmaps
       </h1>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 place-items-center w-full max-w-7xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 place-items-center w-full max-w-7xl mb-10">
         {items.map((item, index) => (
           <Link key={index} href={item.path} passHref>
             <div
