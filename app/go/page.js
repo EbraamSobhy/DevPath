@@ -12,21 +12,21 @@ import {
 import "@xyflow/react/dist/style.css";
 
 const initialNodes = [
-  { id: "n1", position: { x: 0, y: 0 }, data: { label: "Go-Golang" }, style: { background: "#f7df1e", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n1", position: { x: 0, y: 0 }, data: { label: "Go-Golang" }, style: { background: "#00ADD8", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
   { id: "n2", position: { x: 200, y: 0 }, data: { label: "Web Server Basics" }, style: { background: "#68a063", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
   { id: "n3", position: { x: 400, y: 0 }, data: { label: "Gin" }, style: { background: "#ff9800", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
   { id: "n4", position: { x: 600, y: 0 }, data: { label: "JSON" }, style: { background: "#e0234e", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
   { id: "n5", position: { x: 0, y: 150 }, data: { label: "REST APIs / GraphQL" }, style: { background: "#e535ab", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
   { id: "n6", position: { x: 800, y: 0 }, data: { label: "SQL" }, style: { background: "#00758f", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
   { id: "n7", position: { x: 200, y: 150 }, data: { label: "MongoDB" }, style: { background: "#4db33d", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n8", position: { x: 200, y: 220 }, data: { label: "Golang-Migrate" }, style: { background: "#4db33d", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n9", position: { x: 400, y: 150 }, data: { label: "JWT" }, style: { background: "#3b82f6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n10", position: { x: 600, y: 150 }, data: { label: "OAuth" }, style: { background: "#f1502f", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n11", position: { x: 800, y: 150 }, data: { label: "Testing (Mocking)" }, style: { background: "#99425b", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n12", position: { x: 0, y: 300 }, data: { label: "Git & GitHub" }, style: { background: "#000000", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n13", position: { x: 250, y: 300 }, data: { label: "Cloud Platforms" }, style: { background: "#0ea5e9", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n14", position: { x: 500, y: 300 }, data: { label: "Docker" }, style: { background: "#0db7ed", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n15", position: { x: 750, y: 300 }, data: { label: "CI/CD" }, style: { background: "#f97316", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n8", position: { x: 400, y: 150 }, data: { label: "Golang-Migrate" }, style: { background: "#4db33d", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n9", position: { x: 600, y: 150 }, data: { label: "JWT" }, style: { background: "#3b82f6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n10", position: { x: 800, y: 150 }, data: { label: "OAuth" }, style: { background: "#f1502f", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n11", position: { x: 0, y: 300 }, data: { label: "Testing (Mocking)" }, style: { background: "#99425b", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n12", position: { x: 200, y: 300 }, data: { label: "Git & GitHub" }, style: { background: "#000000", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n13", position: { x: 400, y: 300 }, data: { label: "Cloud Platforms" }, style: { background: "#0ea5e9", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n14", position: { x: 600, y: 300 }, data: { label: "Docker" }, style: { background: "#0db7ed", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
+  { id: "n15", position: { x: 800, y: 300 }, data: { label: "CI/CD" }, style: { background: "#f97316", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
 ];
 
 const initialEdges = [
@@ -78,6 +78,6 @@ export default function App() {
         <Background gap={20} color="#475569" />
         <Controls showInteractive={false} />
       </ReactFlow>
-    </div>
+    </div> 
   );
 }
