@@ -14,7 +14,7 @@ export default function Roadmaps() {
   return (
     <div className="bg-[#0f172a] min-h-screen flex flex-col items-center justify-start px-4 sm:px-6 md:px-8 pt-6 pb-10">
       {/* Title */}
-      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-12 text-center px-6 py-3 rounded-xl shadow-2xl bg-[#1e293b] mt-[150px]">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-12 text-center px-6 py-3 rounded-xl shadow-2xl mt-[150px]">
         Game Engines
       </h1>
 
