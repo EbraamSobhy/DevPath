@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import {
   ReactFlow,
   applyNodeChanges,
@@ -11,42 +11,87 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 
-const initialNodes = [
-  { id: "n1", position: { x: 0, y: 0 }, data: { label: "JavaScript" }, style: { background: "#f7df1e", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // JS yellow
-  { id: "n2", position: { x: 200, y: 0 }, data: { label: "Node.js" }, style: { background: "#68a063", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // Node green
-  { id: "n3", position: { x: 400, y: 0 }, data: { label: "Asynchronous Programming" }, style: { background: "#ff9800", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // Async orange
-  { id: "n4", position: { x: 600, y: 0 }, data: { label: "Express.js / NestJS" }, style: { background: "#e0234e", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // NestJS pink-red
-  { id: "n5", position: { x: 0, y: 150 }, data: { label: "REST APIs / GraphQL" }, style: { background: "#e535ab", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // GraphQL pink
-  { id: "n6", position: { x: 800, y: 0 }, data: { label: "SQL" }, style: { background: "#00758f", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // MySQL blue
-  { id: "n7", position: { x: 200, y: 150 }, data: { label: "MongoDB" }, style: { background: "#4db33d", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // Mongo green
-  { id: "n8", position: { x: 400, y: 150 }, data: { label: "JWT" }, style: { background: "#3b82f6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // JWT blue
-  { id: "n9", position: { x: 600, y: 150 }, data: { label: "OAuth" }, style: { background: "#f1502f", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // OAuth black
-  { id: "n10", position: { x: 800, y: 150 }, data: { label: "Testing (Jest)" }, style: { background: "#99425b", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // Jest wine
-  { id: "n11", position: { x: 0, y: 300 }, data: { label: "Git & GitHub" }, style: { background: "#000000", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // Git orange-red
-  { id: "n12", position: { x: 250, y: 300 }, data: { label: "Cloud Platforms" }, style: { background: "#0ea5e9", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // Azure blue
-  { id: "n13", position: { x: 500, y: 300 }, data: { label: "Docker" }, style: { background: "#0db7ed", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // Docker cyan
-  { id: "n14", position: { x: 750, y: 300 }, data: { label: "CI/CD" }, style: { background: "#f97316", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } }, // Orange for pipelines
+const baseNodeStyle = {
+  borderRadius: 12,
+  padding: 10,
+  fontWeight: "bold",
+  fontSize: 15,
+  boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+};
+
+const layoutData = [
+  { id: "n1", label: "JavaScript", color: "#f7df1e", textColor: "#000" },
+  { id: "n2", label: "Node.js", color: "#68a063" },
+  { id: "n3", label: "Asynchronous Programming", color: "#ff9800" },
+  { id: "n4", label: "Express.js / NestJS", color: "#e0234e" },
+  { id: "n6", label: "SQL", color: "#00758f" },
+  { id: "n5", label: "REST APIs / GraphQL", color: "#e535ab" },
+  { id: "n7", label: "MongoDB", color: "#4db33d" },
+  { id: "n8", label: "JWT", color: "#3b82f6" },
+  { id: "n9", label: "OAuth", color: "#f1502f" },
+  { id: "n10", label: "Testing (Jest)", color: "#99425b" },
+  { id: "n11", label: "Git & GitHub", color: "#000000" },
+  { id: "n12", label: "Cloud Platforms", color: "#0ea5e9" },
+  { id: "n13", label: "Docker", color: "#0db7ed" },
+  { id: "n14", label: "CI/CD", color: "#f97316" },
 ];
 
-const initialEdges = [
-  { id: "e1-2", source: "n1", target: "n2", animated: true, style: { stroke: "#68a063", strokeWidth: 2 } },
-  { id: "e2-3", source: "n2", target: "n3", animated: true, style: { stroke: "#ff9800", strokeWidth: 2 } },
-  { id: "e3-4", source: "n3", target: "n4", animated: true, style: { stroke: "#e0234e", strokeWidth: 2 } },
-  { id: "e4-6", source: "n4", target: "n6", animated: true, style: { stroke: "#00758f", strokeWidth: 2 } },
-  { id: "e6-5", source: "n6", target: "n5", animated: true, style: { stroke: "#e535ab", strokeWidth: 2 } },
-  { id: "e5-7", source: "n5", target: "n7", animated: true, style: { stroke: "#4db33d", strokeWidth: 2 } },
-  { id: "e7-8", source: "n7", target: "n8", animated: true, style: { stroke: "#3b82f6", strokeWidth: 2 } },
-  { id: "e8-9", source: "n8", target: "n9", animated: true, style: { stroke: "#f1502f", strokeWidth: 2 } },
-  { id: "e9-10", source: "n9", target: "n10", animated: true, style: { stroke: "#99425b", strokeWidth: 2 } },
-  { id: "e10-11", source: "n10", target: "n11", animated: true, style: { stroke: "#000000", strokeWidth: 2 } },
-  { id: "e11-12", source: "n11", target: "n12", animated: true, style: { stroke: "#0ea5e9", strokeWidth: 2 } },
-  { id: "e12-13", source: "n12", target: "n13", animated: true, style: { stroke: "#0db7ed", strokeWidth: 2 } },
-  { id: "e13-14", source: "n13", target: "n14", animated: true, style: { stroke: "#f97316", strokeWidth: 2 } },
+const edgeConnections = [
+  ["n1", "n2"], ["n2", "n3"], ["n3", "n4"], ["n4", "n6"],
+  ["n6", "n5"], ["n5", "n7"], ["n7", "n8"], ["n8", "n9"],
+  ["n9", "n10"], ["n10", "n11"], ["n11", "n12"], ["n12", "n13"], ["n13", "n14"],
 ];
 
 export default function App() {
-  const [nodes, setNodes] = useState(initialNodes);
-  const [edges, setEdges] = useState(initialEdges);
+  const [nodes, setNodes] = useState([]);
+  const [edges, setEdges] = useState([]);
+
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768; // breakpoint
+    const gapX = isMobile ? 0 : 220;
+    const gapY = 100;
+
+    // 📱 Mobile Layout (Vertical)
+    const mobileNodes = layoutData.map((n, i) => ({
+      id: n.id,
+      position: { x: 20, y: i * 90 },
+      data: { label: n.label },
+      style: {
+        ...baseNodeStyle,
+        background: n.color,
+        color: n.textColor || "white",
+        width: "85vw",
+      },
+    }));
+
+    // 💻 Desktop Layout (Grid / Flow)
+    const desktopNodes = layoutData.map((n, i) => ({
+      id: n.id,
+      position: {
+        x: (i % 5) * (gapX + 50),
+        y: Math.floor(i / 5) * gapY * 1.6,
+      },
+      data: { label: n.label },
+      style: {
+        ...baseNodeStyle,
+        background: n.color,
+        color: n.textColor || "white",
+      },
+    }));
+
+    const generatedNodes = isMobile ? mobileNodes : desktopNodes;
+
+    const generatedEdges = edgeConnections.map(([src, tgt], i) => ({
+      id: `e${i}`,
+      source: src,
+      target: tgt,
+      animated: true,
+      style: { stroke: "#2563eb", strokeWidth: 2 },
+    }));
+
+    setNodes(generatedNodes);
+    setEdges(generatedEdges);
+  }, []);
 
   const onNodesChange = useCallback(
     (changes) => setNodes((ns) => applyNodeChanges(changes, ns)),
@@ -58,12 +103,21 @@ export default function App() {
   );
   const onConnect = useCallback(
     (params) =>
-      setEdges((es) => addEdge({ ...params, style: { stroke: "#2563eb", strokeWidth: 2 } }, es)),
+      setEdges((es) =>
+        addEdge({ ...params, style: { stroke: "#2563eb", strokeWidth: 2 } }, es)
+      ),
     []
   );
 
   return (
-    <div style={{ width: "100vw", height: "100vh", background: "linear-gradient(135deg, #1e293b, #0f172a)" }}>
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        background: "linear-gradient(135deg, #1e293b, #0f172a)",
+        overflow: "hidden",
+      }}
+    >
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -71,7 +125,8 @@ export default function App() {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         fitView
-        defaultEdgeOptions={{ animated: true }}
+        minZoom={0.3}
+        maxZoom={1.5}
       >
         <Background gap={20} color="#475569" />
         <Controls showInteractive={false} />
@@ -79,3 +134,4 @@ export default function App() {
     </div>
   );
 }
+

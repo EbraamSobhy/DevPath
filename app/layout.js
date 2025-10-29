@@ -25,34 +25,36 @@ export default function RootLayout({ children }) {
       >
         <div className="min-h-screen bg-[#000075] relative overflow-hidden">
       {/* Navigation */}
-      <nav className="relative z-10 flex justify-between items-center px-8 py-6">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center">
-            <Link href="/">
-              <img 
-                src="/DevPath icon.png" 
-                className="relative h-[300px] w-[500px] mx-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500" 
-                alt="DevPath" 
-              />
-            </Link>
-          </div>
-          <span className="text-white font-bold text-2xl">DevPath</span>
-        </div>
-        <div className="flex items-center space-x-6">
-          <a
-            href="https://play.google.com/store"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-white rounded-xl p-2 transition-all duration-300 bg-black"
-          >
-            <img
-              src="/google play.png"
-              className="h-[60px] w-[200px] object-contain drop-shadow-2xl"
-              alt="DevPath"
-            />
-          </a>
-        </div>
-      </nav>
+        <nav className="relative z-10 flex flex-wrap justify-between items-center px-6 py-4 md:px-8 md:py-6">
+          {/* Logo + Text */}
+            <div className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2">
+          <img
+            src="/DevPath icon.png"
+            alt="DevPath"
+            className="h-10 w-10 sm:h-12 sm:w-12 object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105"
+          />
+          <span className="text-white font-bold text-xl sm:text-2xl">DevPath</span>
+        </Link>
+      </div>
+
+      {/* Play Store Button */}
+      <div className="flex items-center mt-4 md:mt-0">
+        <a
+          href="https://play.google.com/store"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border border-white rounded-lg p-1 sm:p-2 transition-all duration-300 bg-black"
+        >
+          <img
+            src="/google play.png"
+            alt="Google Play"
+            className="h-10 w-32 sm:h-[60px] sm:w-[200px] object-contain drop-shadow-2xl"
+          />
+        </a>
+      </div>
+    </nav>
+
           {/* ✅ Page Content */}
           <main className="relative z-0">{children}</main>
       <footer className="relative z-10 border-t border-white bg-black/20 backdrop-blur-sm ">

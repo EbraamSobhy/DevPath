@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import {
   ReactFlow,
   applyNodeChanges,
@@ -11,36 +11,90 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 
-const initialNodes = [
-  { id: "n1", position: { x: 0, y: 0 }, data: { label: "HTML" }, style: { background: "#f87171", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n2", position: { x: 200, y: 0 }, data: { label: "CSS" }, style: { background: "#60a5fa", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n3", position: { x: 400, y: 0 }, data: { label: "JavaScript" }, style: { background: "#facc15", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n4", position: { x: 600, y: 0 }, data: { label: "Tailwind CSS" }, style: { background: "#14b8a6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n5", position: { x: 0, y: 150 }, data: { label: "React.js" }, style: { background: "#61dafb", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n6", position: { x: 800, y: 0 }, data: { label: "Git & GitHub" }, style: { background: "#6b7280", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n7", position: { x: 200, y: 150 }, data: { label: "Responsive Design" }, style: { background: "#4ade80", color: "#000", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n8", position: { x: 400, y: 150 }, data: { label: "TypeScript" }, style: { background: "#3b82f6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n9", position: { x: 600, y: 150 }, data: { label: "Next.js" }, style: { background: "#000000", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n10", position: { x: 800, y: 150 }, data: { label: "Testing (Jest, Vitest)" }, style: { background: "#9333ea", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-  { id: "n11", position: { x: 0, y: 300 }, data: { label: "Deploy Web App on Netlify" }, style: { background: "#f472b6", color: "white", borderRadius: 12, padding: 10, fontWeight: "bold", fontSize: 15, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" } },
-];
+const baseNodeStyle = {
+  color: "white",
+  borderRadius: 12,
+  padding: 10,
+  fontWeight: "bold",
+  fontSize: 15,
+  boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+  textAlign: "center",
+  minWidth: 120,
+};
 
-const initialEdges = [
-  { id: "e1-2", source: "n1", target: "n2", animated: true, style: { stroke: "#60a5fa", strokeWidth: 2 } },
-  { id: "e2-3", source: "n2", target: "n3", animated: true, style: { stroke: "#facc15", strokeWidth: 2 } },
-  { id: "e3-4", source: "n3", target: "n4", animated: true, style: { stroke: "#14b8a6", strokeWidth: 2 } },
-  { id: "e4-6", source: "n4", target: "n6", animated: true, style: { stroke: "#6b7280", strokeWidth: 2 } },
-  { id: "e6-5", source: "n6", target: "n5", animated: true, style: { stroke: "#61dafb", strokeWidth: 2 } },
-  { id: "e5-7", source: "n5", target: "n7", animated: true, style: { stroke: "#4ade80", strokeWidth: 2 } },
-  { id: "e7-8", source: "n7", target: "n8", animated: true, style: { stroke: "#3b82f6", strokeWidth: 2 } },
-  { id: "e8-9", source: "n8", target: "n9", animated: true, style: { stroke: "#000", strokeWidth: 2 } },
-  { id: "e9-10", source: "n9", target: "n10", animated: true, style: { stroke: "#9333ea", strokeWidth: 2 } },
-  { id: "e10-11", source: "n10", target: "n11", animated: true, style: { stroke: "#f472b6", strokeWidth: 2 } },
-];
+const colors = {
+  html: "#f87171",
+  css: "#60a5fa",
+  js: "#facc15",
+  tailwind: "#14b8a6",
+  react: "#61dafb",
+  git: "#6b7280",
+  responsive: "#4ade80",
+  ts: "#3b82f6",
+  next: "#000000",
+  testing: "#9333ea",
+  deploy: "#f472b6",
+};
 
 export default function App() {
-  const [nodes, setNodes] = useState(initialNodes);
-  const [edges, setEdges] = useState(initialEdges);
+  const [nodes, setNodes] = useState([]);
+  const [edges, setEdges] = useState([]);
+
+  // Responsive layout generator
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+
+    const nodeGapX = isMobile ? 120 : 200;
+    const nodeGapY = 100;
+
+    const layout = [
+      { id: "n1", label: "HTML", color: colors.html, x: 0, y: 0 },
+      { id: "n2", label: "CSS", color: colors.css, x: nodeGapX, y: 0 },
+      { id: "n3", label: "JavaScript", color: colors.js, x: nodeGapX * 2, y: 0 },
+      { id: "n4", label: "Tailwind CSS", color: colors.tailwind, x: nodeGapX * 3, y: 0 },
+      { id: "n6", label: "Git & GitHub", color: colors.git, x: nodeGapX * 4, y: 0 },
+      { id: "n5", label: "React.js", color: colors.react, x: 0, y: nodeGapY * 1.5 },
+      { id: "n7", label: "Responsive Design", color: colors.responsive, x: nodeGapX, y: nodeGapY * 1.5 },
+      { id: "n8", label: "TypeScript", color: colors.ts, x: nodeGapX * 2, y: nodeGapY * 1.5 },
+      { id: "n9", label: "Next.js", color: colors.next, x: nodeGapX * 3, y: nodeGapY * 1.5 },
+      { id: "n10", label: "Testing (Jest, Vitest)", color: colors.testing, x: nodeGapX * 4, y: nodeGapY * 1.5 },
+      { id: "n11", label: "Deploy Web App on Netlify", color: colors.deploy, x: nodeGapX * 2, y: nodeGapY * 3 },
+    ];
+
+    const mobileLayout = isMobile
+      ? layout.map((n, i) => ({
+          id: n.id,
+          position: { x: 20, y: i * 90 },
+          data: { label: n.label },
+          style: { ...baseNodeStyle, background: n.color, width: "85vw" },
+        }))
+      : layout.map((n) => ({
+          id: n.id,
+          position: { x: n.x, y: n.y },
+          data: { label: n.label },
+          style: { ...baseNodeStyle, background: n.color },
+        }));
+
+    const allEdges = [
+      { id: "e1-2", source: "n1", target: "n2" },
+      { id: "e2-3", source: "n2", target: "n3" },
+      { id: "e3-4", source: "n3", target: "n4" },
+      { id: "e4-6", source: "n4", target: "n6" },
+      { id: "e6-5", source: "n6", target: "n5" },
+      { id: "e5-7", source: "n5", target: "n7" },
+      { id: "e7-8", source: "n7", target: "n8" },
+      { id: "e8-9", source: "n8", target: "n9" },
+      { id: "e9-10", source: "n9", target: "n10" },
+      { id: "e10-11", source: "n10", target: "n11" },
+    ].map((e) => ({
+      ...e,
+      animated: true,
+      style: { stroke: "#2563eb", strokeWidth: 2 },
+    }));
+
+    setNodes(mobileLayout);
+    setEdges(allEdges);
+  }, []);
 
   const onNodesChange = useCallback(
     (changes) => setNodes((ns) => applyNodeChanges(changes, ns)),
@@ -57,7 +111,14 @@ export default function App() {
   );
 
   return (
-    <div style={{ width: "100vw", height: "100vh", background: "linear-gradient(135deg, #1e293b, #0f172a)" }}>
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        background: "linear-gradient(135deg, #1e293b, #0f172a)",
+        overflow: "hidden",
+      }}
+    >
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -65,7 +126,8 @@ export default function App() {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         fitView
-        defaultEdgeOptions={{ animated: true }}
+        minZoom={0.3}
+        maxZoom={1.5}
       >
         <Background gap={20} color="#475569" />
         <Controls showInteractive={false} />
@@ -73,3 +135,4 @@ export default function App() {
     </div>
   );
 }
+
