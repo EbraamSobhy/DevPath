@@ -15,6 +15,23 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "DevPath",
   description: "Roadmap Web App for CS Students and Beginners",
+  manifest: "/manifest.webmanifest",
+  themeColor: "#000075",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "DevPath",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/DevPathLogo.png", sizes: "1024x1024", type: "image/png" },
+    ],
+    apple: [{ url: "/DevPathLogo.png", sizes: "1024x1024", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({ children }) {
