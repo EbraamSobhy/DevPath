@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Map, Sparkles, Star } from 'lucide-react';
 import Link from 'next/link'
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -18,8 +19,10 @@ export default function Home() {
         {/* Main logo area */}
         <div className="group">
           <div className="relative">
-            <img 
+            <Image
               src="/DevPathLogo.png" 
+              width={500}
+              height={300}
               className="relative h-[300px] w-[500px] mx-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500" 
               alt="DevPath" 
             />
